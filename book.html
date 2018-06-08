@@ -1,0 +1,90 @@
+
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<title>万卡佰慧管家-招商加盟</title>
+<script type="text/javascript" src="js/wfjq.js"></script>
+<script type="text/javascript">
+    $("document").ready(function(){
+		$(".size a").click(function(){
+            var o=$(this);
+            if(!o.hasClass("cursize")){
+				$(".cursize").removeClass("cursize");
+				o.addClass("cursize");
+				$("#wfprosize").val(o.attr("data-size"));
+			}
+		});
+		$(".colour a").click(function(){
+			var o=$(this);
+			if(!o.hasClass("curcolour")){
+				$(".curcolour").removeClass("curcolour");
+				o.addClass("curcolour");
+				$("#wfprocolour").val(o.attr("data-colour"));
+            }
+		});
+	});
+	function chkform(){
+		if(document.getElementById("b_title").value == ""){
+			alert("请填写姓名");
+			document.getElementById("b_title").focus();
+			return false;
+		}
+		if(document.getElementById("b_tel").value == ""){
+			alert("请填写手机");
+			document.getElementById("b_tel").focus();
+			return false;
+		}
+		if(document.getElementById("b_content").value == ""){
+			//alert("请填写详细地址");
+			//document.getElementById("b_content").focus();
+			//return false;
+		}
+		return true;
+	}
+</script>
+<link href="css/style_book.css" rel="stylesheet" type="text/css">
+<style type="text/css">
+.wforder{max-width:1170px;background:#FFFFFF;}
+.wfwrap{border:0 solid #FFFFFF;}
+.wfform{width:100%;}
+@media screen and (max-width:749px){.wfform{margin-right:0;}.wffhwrap,.wfquewrap{position:static;width:100%;}}
+@media screen and (max-width:449px){.wfwrap{border:none;}}
+</style>
+</head>
+<body>
+<div class="wforder">
+	<div class="wfwrap">
+		<form id="wfform" name="wfform" method="post" class="wfform" target="_top" action="book/add_do.php" onSubmit="return chkform()">
+			<div class="wftit-img"><img src="images/book.jpg"></div>
+			<div class="wfform-box">
+				<label class="wfform-label">姓名*</label>
+				<div class="wfform-opt">
+					<input type="text" name="b_title" id="b_title" lay-verify="b_title" placeholder="请填写姓名" class="input-text">
+				</div>
+			</div>
+			<div class="wfform-box">
+				<label class="wfform-label">手机号码*</label>
+				<div class="wfform-opt">
+					<input type="text" name="b_tel" id="b_tel" lay-verify="b_tel" placeholder="请填写手机号码" class="input-text">
+				</div>
+			</div>
+			<div class="wfform-box">
+				<label class="wfform-label">详细地址</label>
+				<div class="wfform-opt">
+					<input type="text" name="b_content" id="b_content" lay-verify="b_content" placeholder="请填写详细地址" class="input-text">
+				</div>
+			</div>
+
+						
+						<!---------- 验证码 ---------->
+			<div class="wfform-box btnbox">
+				<button id="wfsubmit" lay-submit lay-filter="wfsubmit" class="wfbtn btn-b">点击提交表单</button>
+			</div>
+		</form>
+			</div>
+</div>
+</body>
+</html>
